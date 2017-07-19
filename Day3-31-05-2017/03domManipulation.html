@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+       <p id="opener">First Paragraph</p>
+       <p>Second Paragraph</p>
+       <p class="closer">Third Paragraph!</p>
+       <p class="closer">Fourth Paragraph!</p>
+       <p class="closer">This is the div with class closer!</p>
+       <div> This is simple Div!</div>
+       <br/>
+       <span>This is outer Span</span>
+       <div>
+            <span>This is inner span to div!</span><br/>
+            <span>This is one more inner span to div!</span>
+       </div>
+
+       <button onclick="change()">Change</button>
+       <script>
+            function change(){
+               /* var p1= document.getElementById('opener');
+                p1.style.color = 'red';
+                */
+
+               // var p1 = document.querySelector('#opener');
+               // p1.style.color = 'maroon';
+
+               // querySelector lets you find elements with rules that you can't 
+               // specify along with getElementById or Same kind.
+
+                /*var spn = document.querySelector('div > span');
+                spn.style.color = 'red';
+                spn.style.fontSize = 'xx-large';
+                */
+                
+             /*   var innerSpanArr = document.querySelectorAll('div > span');
+                for(var i in innerSpanArr)
+                {
+                    innerSpanArr[i].style.color = 'red';
+                    innerSpanArr[i].style.fontSize = 'xx-large';
+                }
+                */
+
+               /* var closeArr = document.getElementsByClassName('closer');
+                for(var i in closeArr){
+                    closeArr[i].style.backgroundColor = 'yellow';
+                    closeArr[i].style.color = 'green';
+                }
+                */
+
+                // Adding new Element in Page
+
+                var newPara = document.createElement('p');
+                newPara.innerHTML = 'New Para';
+                newPara.style.backgroundColor = 'peachpuff';
+                newPara.style.width = '200px';
+                newPara.style.border = 'solid 5px maroon';
+                document.body.appendChild(newPara);
+
+               // alert(document.documentElement.innerHTML);
+
+
+               // Deleting element from page
+                var delPara = document.getElementsByTagName('p')[2];
+                document.body.removeChild(delPara);
+            }
+
+       </script>
+
+    </body>
+</html>

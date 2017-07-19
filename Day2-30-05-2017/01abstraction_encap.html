@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+        <script>
+            
+
+
+            function Person(){
+
+                this.id = 100;
+                this.hobbies = ['Music','Cricket'];  // at Constructor Level
+                var name = 'undefined';
+
+                this.getInfo = function(){  // Priviledge Function
+                    return this.id+ ' '+ name;
+                }
+
+                this.setName = function(nm){
+                    name = nm;
+                }
+
+                Person.population++;
+
+            }
+
+            // at Prototype Level
+            Person.prototype.hobbies = ['Music', 'Cricket'];
+
+            // Static Property
+            Person.population = 0;
+
+            var person1 = new Person();
+            var person2 = new Person();
+
+            console.log(person1.id);
+            console.log(person1.getInfo());
+            console.log(person2.getInfo());
+            console.log(person1.hobbies);
+            console.log(person2.hobbies);
+            person1.hobbies.push('Computer Games');
+            person1.setName('Sachin');
+            console.log(person1.hobbies);
+            
+        </script>
+
+
+    </body>
+</html>

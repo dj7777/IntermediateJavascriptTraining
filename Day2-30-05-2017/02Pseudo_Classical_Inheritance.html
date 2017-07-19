@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> </title>
+    </head>
+    <body>
+       <script>
+
+          
+            function Human(name){
+                this.name = name;
+                this.hArr = ['ab','cd','ef','gh'];
+
+            }
+
+            Human.prototype.speak = function(){
+                alert('I speak English');
+            }
+            Human.prototype.introduction= function(){
+                alert('Hi, I am '+ this.name);
+            }
+
+            // prototype Chaining
+            Student.prototype = new Human();
+            Student.prototype.constructor = Student;
+
+            function Student(nm, college, courses){
+                Human.call(this,nm); // classical inheritance
+                this.college= college;
+                this.courses = courses;
+            }
+
+            Student.prototype.takeExams = function(){
+                alert('This is exam time!');
+            }
+
+            // Function Overriding
+            Student.prototype.introduction = function(){
+                alert('Hi, I am '+ this.name +', I am a student of '+ this.college+
+                    ', I study '+this.courses+' Array= '+this.hArr);
+            }
+
+            var person = new Human('Abhijeet');
+             person.speak();
+             person.introduction();
+
+            var student = new Student('Meenakshi', 'AITR', 'Javascript');
+
+             student.speak();
+             student.introduction();
+             student.takeExams();
+
+            letMeIntroduce(student);
+            
+            function letMeIntroduce(obj){
+                obj.introduction();  // polymorphism
+            }
+
+       </script>
+    </body>
+</html>
